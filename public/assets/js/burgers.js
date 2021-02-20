@@ -5,11 +5,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   
     // UPDATE to consumed
-    const changeConsumeBtns = document.querySelectorAll('.change-consumed');
+    const changeConsumedBtns = document.querySelectorAll('.change-consumed');
   
     // event listener on the CREATE button
-    if (changeConsumeBtns) {
-        changeConsumeBtns.forEach((button) => {
+    if (changeConsumedBtns) {
+        changeConsumedBtns.forEach((button) => {
         button.addEventListener('click', (e) => {
           // Grabs the id of the element that goes by the name, "id"
           const id = e.target.getAttribute('data-id');
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
               console.log(`changed eaten status to: ${nowComsumed}`);
               location.reload('/');
             } else {
-              alert('something went wrong!');
+              alert('uh oh, something is not right!');
             }
           });
         });
