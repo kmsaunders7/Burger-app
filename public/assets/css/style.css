@@ -25,6 +25,7 @@ li {
     margin: 5px;
     background: #f3a22a;
     text-align: center;
+    border-radius: 2px;
   }
   
   .label {
