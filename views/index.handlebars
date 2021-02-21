@@ -1,13 +1,13 @@
-<nav class="navbar bg-primary">
-    <a class="navbar-brand">ALL YOU CAN EAT BURGERS</a>
+<nav class="navbar bg-primary text-center">
+    <h1 class="navbar-brand">ALL YOU CAN EAT BURGERS</h1>
 </nav>
 
 <div class="container-fluid">
-    
+
 
     {{!-- CREATE --}}
     <div class="container-fluid">
-        <div class="card bg-warning mx-auto w-75 bg-">
+        <div class="card bg-warning mx-auto w-75 shadow-lg create">
             <div class="card-header text-center">
                 <h2>Add a Burger</h2>
             </div>
@@ -22,6 +22,22 @@
                 </form>
             </div>
         </div>
+    </div>
+    <div class="col-sm-6 shadow-lg">
+        <h2 class="h2">Burgers Available To Eat!</h2>
+        <ul>
+            {{#each burgers}}
+            {{#unless this.devoured}}
+            <li>
+                {{this.burger_name}}
+                <form action="/{{this.id}}?_method=PUT" method="POST">
+                    <input type="hidden" name="devoured" value="1">
+                    <button class="btn btn-secondary" type="submit">Eat it!</button>
+                </form>
+            </li>
+            {{/unless}}
+            {{/each}}
+        </ul>
     </div>
 
 </div>
